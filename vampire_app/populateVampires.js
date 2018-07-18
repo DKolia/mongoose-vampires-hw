@@ -1,4 +1,6 @@
-[
+
+// This is the base vampire data set we are given, defining "Vampire"
+const Vampire = [
   {
     name: 'Count Chocula',
     hair_color: 'brown',
@@ -136,3 +138,6 @@
     title: 'Osiris of Sewer Rats'
   }
 ]
+
+// This exports the vampire data set above
+module.exports = Vampire;

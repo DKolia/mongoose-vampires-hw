@@ -27,7 +27,45 @@ db.on("error", (err) => {
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 
+const VampiresInArray = require("./populateVampires");
+
+Vampire.create(VampireArray, (err, response) => {
+  if(err) {
+    console.log(err, " is the error");
+  } else {
+    console.log("Populating Vampires!");
+  }
+})
+
 // ### Add some new vampire data
+
+// This is my new data set for more vampires
+const vampireName = ["Baddy", "George", "Ralph", "Blight"];
+const vampireDob = ["March 1, 1500", "March 5, 1900", "March 3, 1980", "March 19, 1900"];
+const vampireHairColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
+const vampireEyeColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
+const vampireLoves = ["Flying", "Terrorizing", "Biting", "Dancing"];
+const vampireLocations = ["London", "Transylvania", "Texas", "Chicago"];
+const vampireGender = ["m", "m", "m", "?"];
+const vampireVictims = [900, 500, 200, 100];
+
+// This for loop creates more vampires, but isn't random, just uses "i"
+for (var i = 0; i < vampireName.length; i++) {
+  Vampire.create({
+    name: vampireName[i],
+    dob: vampireDob[i],
+    hair_color: vampireHairColor[i],
+    eye_color: vampireEyeColor[i],
+    loves: vampireLoves[i],
+    location: vampireLocations[i],
+    gender: vampireGender[i],
+    victims: vampireVictims[i]
+  })
+  console.log("Craeted spooky vampire!");
+}
+
+
+
 
 /////////////////////////////////////////////////
 // ## QUERYING
