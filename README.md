@@ -9,7 +9,7 @@ Utilize the following resources to research the commands you will need:
 - Your notes from today
 - [MongoDB Manual](https://docs.mongodb.org/manual/reference/operator/query/#query-selectors)
 - [Mongoose Docs](http://mongoosejs.com/docs/guide.html)
-- Shahzad's cheatsheet 
+- Shahzad's cheatsheet
 
 # Setup
 1. Start your mongo server with `mongod`
@@ -112,7 +112,7 @@ Vampire.collection.insertMany(vampireData,(err, data) => {
   });
 ```
 
-# Day 1: 
+# Day 1:
 
 ### Add some new vampire data
 

@@ -1,14 +1,26 @@
 // 1. Require your node modules
+const mongo = require("mongo");
+const mongoose = require("mongoose");
 
 // 2. Require your model (and possibly your extra data source);
+const vampires = require("/populateVampires.js");
 
 // 3. Connect your database and collection name
+mongoose.connect("mongodb://localhost:27017/vampire", {useNewUrlParser: true});
+// useNewUrlParser is to prevent a Mongo harmless warning/error, found on error message and recommended by Stack Overflow
+
 
 // 4. Open your mongoose connection
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
+db.on("connected", () => {
+  console.log("Mongoose has connected!");
+});
 
+db.on("error", (err) => {
+  console.log(err, " is the error"
+});
 // Note: Remember to close your connection after you add, update, remove from your database
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
