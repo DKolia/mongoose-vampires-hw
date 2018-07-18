@@ -29,13 +29,13 @@ mongoose.connection.on("error", (err) => {
 // ### Add the vampire data that we gave you
 
 
-Vampires.create(VampiresInArray, (err, response) => {
-  if(err) {
-    console.log(err, " is the error");
-  } else {
-    console.log("Populating Vampires!");
-  }
-})
+// Vampires.create(VampiresInArray, (err, response) => {
+//   if(err) {
+//     console.log(err, " is the error");
+//   } else {
+//     console.log("Populating Vampires!");
+//   }
+// })
 
 // ### Add some new vampire data
 
@@ -51,7 +51,7 @@ Vampires.create(VampiresInArray, (err, response) => {
 
 // This for loop creates more vampires, but isn't random, just uses "i"
 // for (var i = 0; i < vampireName.length; i++) {
-//   Vampire.create({
+//   Vampires.create({
 //     name: vampireName[i],
 //     dob: vampireDob[i],
 //     hair_color: vampireHairColor[i],
