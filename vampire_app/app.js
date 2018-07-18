@@ -1,9 +1,10 @@
 // 1. Require your node modules
 const mongo = require("mongo");
 const mongoose = require("mongoose");
+const Vampires = require("./models/vampire.js");
 
 // 2. Require your model (and possibly your extra data source);
-const vampires = require("/populateVampires.js");
+const VampiresInArray = require("./populateVampires");
 
 // 3. Connect your database and collection name
 mongoose.connect("mongodb://localhost:27017/vampire", {useNewUrlParser: true});
@@ -14,12 +15,12 @@ mongoose.connect("mongodb://localhost:27017/vampire", {useNewUrlParser: true});
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
-db.on("connected", () => {
+mongoose.connection.on("connected", () => {
   console.log("Mongoose has connected!");
 });
 
-db.on("error", (err) => {
-  console.log(err, " is the error"
+mongoose.connection.on("error", (err) => {
+  console.log(err, " is the error")
 });
 // Note: Remember to close your connection after you add, update, remove from your database
 /////////////////////////////////////////////////
@@ -27,9 +28,8 @@ db.on("error", (err) => {
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 
-const VampiresInArray = require("./populateVampires");
 
-Vampire.create(VampireArray, (err, response) => {
+Vampires.create(VampiresInArray, (err, response) => {
   if(err) {
     console.log(err, " is the error");
   } else {
@@ -40,29 +40,29 @@ Vampire.create(VampireArray, (err, response) => {
 // ### Add some new vampire data
 
 // This is my new data set for more vampires
-const vampireName = ["Baddy", "George", "Ralph", "Blight"];
-const vampireDob = ["March 1, 1500", "March 5, 1900", "March 3, 1980", "March 19, 1900"];
-const vampireHairColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
-const vampireEyeColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
-const vampireLoves = ["Flying", "Terrorizing", "Biting", "Dancing"];
-const vampireLocations = ["London", "Transylvania", "Texas", "Chicago"];
-const vampireGender = ["m", "m", "m", "?"];
-const vampireVictims = [900, 500, 200, 100];
+// const vampireName = ["Baddy", "George", "Ralph", "Blight"];
+// const vampireDob = ["March 1, 1500", "March 5, 1900", "March 3, 1980", "March 19, 1900"];
+// const vampireHairColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
+// const vampireEyeColor = ["Silver", "Ebony", "Sparking", "Blood Red"];
+// const vampireLoves = ["Flying", "Terrorizing", "Biting", "Dancing"];
+// const vampireLocations = ["London", "Transylvania", "Texas", "Chicago"];
+// const vampireGender = ["m", "m", "m", "?"];
+// const vampireVictims = [900, 500, 200, 100];
 
 // This for loop creates more vampires, but isn't random, just uses "i"
-for (var i = 0; i < vampireName.length; i++) {
-  Vampire.create({
-    name: vampireName[i],
-    dob: vampireDob[i],
-    hair_color: vampireHairColor[i],
-    eye_color: vampireEyeColor[i],
-    loves: vampireLoves[i],
-    location: vampireLocations[i],
-    gender: vampireGender[i],
-    victims: vampireVictims[i]
-  })
-  console.log("Craeted spooky vampire!");
-}
+// for (var i = 0; i < vampireName.length; i++) {
+//   Vampire.create({
+//     name: vampireName[i],
+//     dob: vampireDob[i],
+//     hair_color: vampireHairColor[i],
+//     eye_color: vampireEyeColor[i],
+//     loves: vampireLoves[i],
+//     location: vampireLocations[i],
+//     gender: vampireGender[i],
+//     victims: vampireVictims[i]
+//   })
+//   console.log("Craeted spooky vampire!");
+// }
 
 // Now that I have created them.... ???
 
