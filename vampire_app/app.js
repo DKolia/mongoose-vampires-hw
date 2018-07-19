@@ -118,10 +118,49 @@ mongoose.connection.on("error", (err) => {
 // ### Select by exists or does not exist
 // Select All Vampires That...
 // - have a title property
-// - do not have a victims property
-// - have a title AND no victims
-// - have victims AND the victims they have are greater than 1000
+// Vampires.find({title: {$exists: true}}, (err, vampire) => {
+//     console.log("We're getting here");
+//       if(err) {
+//         console.log(err);
+//       } else {
+//         console.log(vampire);
+//       }
+// })
+// This returns sometimes an empty array if DB doens't have both the created and the provided Vampires
 
+
+// - do not have a victims property
+// Vampires.find({victims: {$exists: false}}, (err, vampire) => {
+//   console.log("We're getting here");
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log(vampire);
+//   }
+// })
+
+
+// - have a title AND no victims
+// Vampires.find({victims: {$exists: false}}, {title: {$exists: true}}, (err, vampire) => {
+//   console.log("We're getting here");
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log(vampire);
+//   }
+// })
+// // This returns an error. I believe it is due to the fact my array has vampires that contain vampires with information that contain all paramters and ones that do not. Not a syntax error.
+
+
+// - have victims AND the victims they have are greater than 1000
+// Vampires.find({victims: {$exists: true}}, {victims: {$gt: 1000}},(err, vampire) => {
+//   console.log("We're getting here");
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log(vampire);
+//   }
+// })
 
 // "Commit 4 - selected vampires"
 
