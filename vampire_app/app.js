@@ -73,13 +73,45 @@ mongoose.connection.on("error", (err) => {
 // ### Select by comparison
 // Write a different query for each of the following:
 // - Find all the vampires that that are females
+
+// Vampires.find({gender: "f"}, (err, vampire) => {
+//   console.log(vampire);
+// });
+
+
 // - have greater than 500 victims
+// Vampires.find({victims: {$gt: 500}}, (err, vampire) => {
+//   console.log(vampire);
+// })
+
+
 // - have fewer than or equal to 150 victims
+// Vampires.find({victims: {$lte: 150}}, (err, vampire) => {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//       console.log(vampire);
+//   }
+// })
+
+
 // - have a victim count is not equal to 210234
+// Vampires.find({victims: {$ne: 210234}}, (err, vampire) => {
+//   console.log("Were getting here");
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       console.log(vampire);
+//     }
+// })
+
+
 // - have greater than 150 AND fewer than 500 victims
+// Vampires.find({victims: {$in: [151, 500]}}, (err, vampire) => {
+//   console.log(vampire);
+// })
 
-
-
+// "Commit 3 - queried for vampires"
 
 
 /////////////////////////////////////////////////
@@ -91,7 +123,7 @@ mongoose.connection.on("error", (err) => {
 // - have victims AND the victims they have are greater than 1000
 
 
-
+// "Commit 4 - selected vampires"
 
 
 /////////////////////////////////////////////////
@@ -103,7 +135,7 @@ mongoose.connection.on("error", (err) => {
 // - have red hair or green eyes
 
 
-
+// "Commit 5 - selected more vampires"
 
 
 /////////////////////////////////////////////////
@@ -115,7 +147,7 @@ mongoose.connection.on("error", (err) => {
 // - love fancy cloaks but not if they also love either top hats or virgin blood * Hint-You will also have to use $nin *
 
 
-
+// "Commit 6 - selected even more vampires"
 
 
 /////////////////////////////////////////////////
@@ -127,7 +159,7 @@ mongoose.connection.on("error", (err) => {
 // - have not killed more than 200 people
 
 
-
+// "Commit 7 - used negative selections on vampire data"
 
 
 /////////////////////////////////////////////////
@@ -137,7 +169,7 @@ mongoose.connection.on("error", (err) => {
 // - replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
 
 
-
+// "Commit 8 - replaced vampire data"
 
 
 /////////////////////////////////////////////////
@@ -151,7 +183,7 @@ mongoose.connection.on("error", (err) => {
 // - We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
 
 
-
+// "Commit 9 - updated vampire data"
 
 
 /////////////////////////////////////////////////
@@ -161,7 +193,7 @@ mongoose.connection.on("error", (err) => {
 // - We found out that the vampires with the blue eyes were just fakes! Let's remove all the vampires who have blue eyes from our database.
 
 
-
+// "Commit 10 - remove vampire data"
 
 
 /////////////////////////////////////////////////
