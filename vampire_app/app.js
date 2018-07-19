@@ -235,9 +235,64 @@ mongoose.connection.on("error", (err) => {
 //### Select objects that match one of several values
 // Select all the vampires that:
 // - love either frilly shirtsleeves or frilly collars
+
+
+// Vampires.find({$or: [{loves: "frilly shirtsleeves"}, {loves: "frilly collars"}], (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
+
 // - love brooding
+
+// Vampires.find(loves: "brooding"}, (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
+
 // - love at least one of the following: appearing innocent, trickery, lurking in rotting mansions, R&B music
+
+// Vampires.find({$or: [{loves: "appearing innocent"}, {loves: "trickery"}], {loves: "lurking in rotting mansions"}], {loves: "R&B msuic"}],(err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
+
+
 // - love fancy cloaks but not if they also love either top hats or virgin blood * Hint-You will also have to use $nin *
+
+// Vampires.find({loves: "fancy cloaks"}, $nin: [loves: "top hats", "virgin blood"]}, (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
+// Unsure of stacking Queries like this, but used MongoDB and stack overfloat for ideas.
+// https://docs.mongodb.com/manual/reference/operator/query/nin/#op._S_nin
 
 
 // "Commit 6 - selected even more vampires"
