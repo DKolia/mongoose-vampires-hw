@@ -169,9 +169,63 @@ mongoose.connection.on("error", (err) => {
 // ### Select with OR
 // Select all the vampires that:
 // - are from New York, New York, US or New Orleans, Louisiana, US
+
+
+// Vampires.find({$or: [{location: "New York, New York, Us"}, {location: "New Orleans, Louisiana, US"}], (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+// At one point I had NY,NY posting, but the "or" seems to be misbehaving, producing an error of misc unexpected tokens
+// https://docs.mongodb.com/manual/reference/operator/query/or/#op._S_or
+
+
 // - love brooding or being tragic
+//
+// Vampires.find({$or: [{loves: "brooding"}, {loves: "being tragic"}], (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
+
+
+
 // - have more than 1000 victims or love marshmallows
+
+// Vampires.find({$or: [{victims: {$gt: 1000}}, {loves: "marshmallows"}], (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
+
 // - have red hair or green eyes
+
+// Vampires.find({$or: [{hair_color: "red"}, {eye_color: "green"}], (err, vampire) => {
+//     console.log("We're getting here");
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(Vampires);
+//     }
+//   }
+// })
+// }
 
 
 // "Commit 5 - selected more vampires"
